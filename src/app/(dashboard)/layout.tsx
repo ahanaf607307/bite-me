@@ -1,4 +1,5 @@
 import DashboardLayoutSetup from "@/view/DashboardComponents/DashboardLayoutSetup/DashboardLayoutSetup";
+import { ThemeProvider } from "@/view/DashboardComponents/DashboardLayoutSetup/ThemeProvider/theme-provider";
 
 export default function DashboardLayout({
   children,
@@ -7,10 +8,12 @@ export default function DashboardLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {/* Main content */}
-        <DashboardLayoutSetup children={children} />
-      </body>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <body>
+          {/* Main content */}
+          <DashboardLayoutSetup children={children} />
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
