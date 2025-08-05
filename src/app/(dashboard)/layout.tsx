@@ -1,5 +1,5 @@
 import DashboardLayoutSetup from "@/view/DashboardComponents/DashboardLayoutSetup/DashboardLayoutSetup";
-import { ThemeProvider } from "@/view/DashboardComponents/DashboardLayoutSetup/ThemeProvider/theme-provider";
+import { ThemeProvider } from "@/view/DashboardComponents/ThemeProvider/theme-provider";
 
 export default function DashboardLayout({
   children,
