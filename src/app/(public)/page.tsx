@@ -1,7 +1,7 @@
 import AllProductsHom from "@/view/PublicComponents/Home/AllProductsHom";
+import DailyBestSellHome from "@/view/PublicComponents/Home/DailyBestSellHome";
 import HeroHome from "@/view/PublicComponents/Home/HeroHome";
 import PopularProductsHome from "@/view/PublicComponents/Home/PopularProductsHome";
-import DailyBestSellHome from "@/view/Shared/DailyBestSellHome";
 
 export default function Home() {
   return (
@@ -9,11 +9,11 @@ export default function Home() {
       <section>
         <HeroHome />
       </section>
-      <div className=" flex flex-col gap-y-6 md:gap-y-10 pt-6">
+      <section className=" flex flex-col gap-y-6 md:gap-y-10 pt-6">
         <PopularProductsHome />
         <DailyBestSellHome />
         <AllProductsHom />
-      </div>
+      </section>
     </div>
   );
 }

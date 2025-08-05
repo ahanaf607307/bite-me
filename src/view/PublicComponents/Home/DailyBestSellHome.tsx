@@ -1,13 +1,12 @@
 "use client";
 import ProductCard from "@/view/Shared/ProductCard";
-import TitleShared from "./TitleShared";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import food1 from "../../../public/images/foodImage/burger.jpg";
-import food2 from "../../../public/images/foodImage/fishFry.jpg";
-import food3 from "../../../public/images/foodImage/plater.jpg";
-import food4 from "../../../public/images/foodImage/vagitableTrea.jpg";
-import food5 from "../../../public/images/foodImage/vagitableTrea2.jpg";
+import food1 from "../../../../public/images/foodImage/burger.jpg";
+import food2 from "../../../../public/images/foodImage/fishFry.jpg";
+import food3 from "../../../../public/images/foodImage/plater.jpg";
+import food4 from "../../../../public/images/foodImage/vagitableTrea.jpg";
+import food5 from "../../../../public/images/foodImage/vagitableTrea2.jpg";
 
 // Import Swiper styles
 import "swiper/css";
@@ -20,7 +19,8 @@ import { MoveRight } from "lucide-react";
 import { useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { FreeMode, Pagination } from "swiper/modules";
-import { ProductCardType } from "../TypeExport/ProductCardType";
+import { ProductCardType } from "@/view/TypeExport/ProductCardType";
+import TitleShared from "@/view/Shared/TitleShared";
 
 const DailyBestSellHome = () => {
   const bestSellProduct: ProductCardType[] = [
@@ -84,11 +84,11 @@ const DailyBestSellHome = () => {
   const swiperRef = useRef<SwiperType | null>(null);
   return (
     <div className="container mx-auto p-6">
-      <div className="flex justify-between items-start ">
+      <div className="flex justify-between items-center lg:items-start ">
         <TitleShared title="Daily Best Sells" className="text-start " />
         <Button
           onClick={() => swiperRef.current?.slideNext()}
-          className="flex gap-x-2 items-center cursor-pointer -mt-7 md:-mt-0 mb-7 md:mb-0"
+          className="flex gap-x-2 items-center cursor-pointer "
           variant="outline"
         >
           {" "}
@@ -107,7 +107,7 @@ const DailyBestSellHome = () => {
           modules={[FreeMode, Pagination]}
           breakpoints={{
             320: {
-              slidesPerView: 1.5,
+              slidesPerView: 1,
               spaceBetween: 16,
             },
             480: {
@@ -115,11 +115,11 @@ const DailyBestSellHome = () => {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 3.5,
+              slidesPerView: 2.5,
               spaceBetween: 20,
             },
             1024: {
-              slidesPerView: 4.5,
+              slidesPerView: 3.5,
               spaceBetween: 24,
             },
             1440: {

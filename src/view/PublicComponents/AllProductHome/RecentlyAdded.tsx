@@ -42,7 +42,7 @@ export function RecentlyAdded() {
         title="Recently added"
         className="text-start text-sm md:text-md"
       />
-      <Separator className="-mt-7" />
+      <Separator className="-mt-2" />
       <div className="space-y-4">
         {recentlyAddedProducts.map((product) => (
           <SmallProductCard

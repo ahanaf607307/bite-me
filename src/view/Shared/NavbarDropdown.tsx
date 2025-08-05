@@ -18,19 +18,25 @@ export function NavbarDropdown() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="rounded-full cursor-pointer  flex items-center justify-center"
+          size="icon"
+          className="rounded-full cursor-pointer border flex items-center justify-center"
         >
-          <CircleUser size={20} />
+          <CircleUser />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="start">
         <DropdownMenuLabel>Ahanaf Mubasshir</DropdownMenuLabel>
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Link href="/dashboard">Dashboard</Link>
-            <DropdownMenuShortcut>
-              <ListChecks />
-            </DropdownMenuShortcut>
+            <Link
+              href="/dashboard"
+              className="flex justify-between items-center w-full"
+            >
+              Dashboard
+              <DropdownMenuShortcut>
+                <ListChecks />
+              </DropdownMenuShortcut>
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />

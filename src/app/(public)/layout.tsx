@@ -3,6 +3,8 @@ import Navbar from "@/view/PublicComponents/Home/Navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import { Footer } from "@/view/PublicComponents/Home/Footer";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,8 +34,10 @@ export default function RootLayout({
         >
           <div className="flex flex-col min-h-screen">
             <Navbar />
+
             <div className=" flex-1">{children}</div>
-            <h1>Footer</h1>
+
+            <Footer />
           </div>
         </body>
       </ThemeProvider>

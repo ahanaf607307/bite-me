@@ -39,7 +39,7 @@ export function TopRated() {
   return (
     <div className="space-y-6">
       <TitleShared title="Top Rated" className="text-start text-xl" />
-      <Separator className="-mt-7" />
+      <Separator className="-mt-2" />
       <div className="space-y-4">
         {topRatedProducts.map((product) => (
           <SmallProductCard

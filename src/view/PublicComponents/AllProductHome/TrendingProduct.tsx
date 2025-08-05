@@ -39,7 +39,7 @@ export function TrendingProducts() {
   return (
     <div className="space-y-6">
       <TitleShared title="Trending Products" className="text-start text-xl" />
-      <Separator className="-mt-7 " />
+      <Separator className="-mt-2 " />
       <div className="space-y-4">
         {trendingProducts.map((product) => (
           <SmallProductCard
