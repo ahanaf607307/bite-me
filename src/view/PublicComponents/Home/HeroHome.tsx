@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ChefHat, Clock, Star } from "lucide-react";
+import { ChefHat, Clock, MoveLeft, MoveRight, Star } from "lucide-react";
 import Image from "next/image";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -96,7 +96,7 @@ export default function HeroHome() {
             </div>
 
             <div className="relative z-20 flex h-full items-center">
-              <div className="container mx-auto px-4 md:px-20 lg:px-5 xl:px-0">
+              <div className="container mx-auto px-4 ">
                 <div className="max-w-3xl space-y-6 text-white">
                   <div className="inline-flex items-center gap-2 rounded-full bg-orange-500/90 px-4 py-2 text-sm font-medium backdrop-blur-sm">
                     <ChefHat className="h-4 w-4" />
@@ -149,37 +149,19 @@ export default function HeroHome() {
       </Swiper>
 
       {/* Custom Navigation Buttons */}
-      <button className="swiper-button-prev-custom absolute left-4 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/30 md:left-8">
-        <svg
-          className="h-6 w-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
+      <Button
+        size="lg"
+        className="swiper-button-prev-custom absolute left-4 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white/20 text-white backdrop-blur-sm transition-all hover:bg-white/30 md:left-8 cursor-pointer"
+      >
+        <MoveLeft />
+      </Button>
 
-      <button className="swiper-button-next-custom absolute right-4 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/30 md:right-8">
-        <svg
-          className="h-6 w-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-      </button>
+      <Button
+        size="lg"
+        className="swiper-button-next-custom absolute right-4 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white/20  text-white backdrop-blur-sm transition-all hover:bg-white/30 md:right-8 cursor-pointer"
+      >
+        <MoveRight />
+      </Button>
 
       <style jsx global>{`
         .swiper-pagination-bullet-active-custom {

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ReduxProvider } from "@/redux/provider";
 
 export const metadata: Metadata = {
-  title: "SHOP.CO",
-  description: "FIND CLOTHES THAT MATCHES YOUR STYLE",
+  title: "Bite Me",
+  description: "Find your best food here",
 };
 
 export default function MainLayout({
@@ -14,7 +15,7 @@ export default function MainLayout({
   return (
     <html lang="en">
       <body>
-        <div>{children}</div>
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );

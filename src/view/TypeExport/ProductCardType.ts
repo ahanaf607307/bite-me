@@ -5,6 +5,7 @@ export interface ProductCardType {
   id: number;
   name: string;
   description: string;
+  category: string;
   brand: string;
   rating: number;
   price: number;

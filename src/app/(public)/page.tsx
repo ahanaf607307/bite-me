@@ -2,6 +2,7 @@ import AllProductsHom from "@/view/PublicComponents/Home/AllProductsHom";
 import DailyBestSellHome from "@/view/PublicComponents/Home/DailyBestSellHome";
 import HeroHome from "@/view/PublicComponents/Home/HeroHome";
 import PopularProductsHome from "@/view/PublicComponents/Home/PopularProductsHome";
+import AdBanner from "@/view/Shared/AdBanner";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <PopularProductsHome />
         <DailyBestSellHome />
         <AllProductsHom />
+        <AdBanner />
       </section>
     </div>
   );

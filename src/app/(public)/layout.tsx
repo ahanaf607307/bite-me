@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SHOP.CO",
-  description: "FIND CLOTHES THAT MATCHES YOUR STYLE",
+  title: "Bite Me",
+  description: "Find your best food here",
 };
 
 export default function RootLayout({

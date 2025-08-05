@@ -12,24 +12,24 @@ type Props = {
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <Card className="rounded-xl overflow-hidden  p-3 shadow-md relative flex flex-col h-full min-h-[320px]">
+    <Card className="rounded-sm overflow-hidden  p-0 group hover:shadow-xl transition-all duration-300 shadow-md relative flex flex-col h-full min-h-[320px]">
       {product.isHot && (
         <Badge className="absolute top-3 left-3 z-10 px-3 bg-pink-500 text-white">
           Hot
         </Badge>
       )}
 
-      <div className="flex justify-center  h-44">
+      <div className="flex justify-center overflow-hidden  relative h-44">
         <Image
           src={product.image}
           alt={product.name}
-          className="object-cover rounded-sm"
+          className="object-cover  group-hover:scale-110 transition-transform duration-300"
         />
       </div>
 
       <CardContent className="flex flex-col justify-between flex-grow space-y-2 px-2 pb-4">
         <div className="flex flex-col gap-y-2">
-          <p className="text-sm text-muted-foreground">Snack</p>
+          <p className="text-sm text-muted-foreground">{product?.category}</p>
           <h2 className="text-base h-12 font-semibold leading-snug">
             {product?.name.slice(0, 30)}
             {product?.name.length > 30 && "..."}

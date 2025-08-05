@@ -19,6 +19,7 @@ const PopularProductsHome = () => {
       oldPrice: 32.8,
       image: food1,
       isHot: true,
+      category: "Snake",
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ const PopularProductsHome = () => {
       oldPrice: 22.49,
       image: food2,
       isHot: false,
+      category: "Snake",
     },
     {
       id: 3,
@@ -41,6 +43,7 @@ const PopularProductsHome = () => {
       oldPrice: 17.5,
       image: food3,
       isHot: true,
+      category: "Snake",
     },
     {
       id: 4,
@@ -52,6 +55,7 @@ const PopularProductsHome = () => {
       oldPrice: 12.0,
       image: food4,
       isHot: false,
+      category: "Snake",
     },
     {
       id: 5,
@@ -63,6 +67,7 @@ const PopularProductsHome = () => {
       oldPrice: 8.25,
       image: food5,
       isHot: true,
+      category: "Snake",
     },
   ];
   return (

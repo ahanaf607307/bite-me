@@ -34,6 +34,7 @@ const DailyBestSellHome = () => {
       oldPrice: 32.8,
       image: food1,
       isHot: true,
+      category: "Snake",
     },
     {
       id: 2,
@@ -45,6 +46,7 @@ const DailyBestSellHome = () => {
       oldPrice: 22.49,
       image: food2,
       isHot: false,
+      category: "Snake",
     },
     {
       id: 3,
@@ -56,6 +58,7 @@ const DailyBestSellHome = () => {
       oldPrice: 17.5,
       image: food3,
       isHot: true,
+      category: "Snake",
     },
     {
       id: 4,
@@ -67,6 +70,7 @@ const DailyBestSellHome = () => {
       oldPrice: 12.0,
       image: food4,
       isHot: false,
+      category: "Snake",
     },
     {
       id: 5,
@@ -78,6 +82,7 @@ const DailyBestSellHome = () => {
       oldPrice: 8.25,
       image: food5,
       isHot: true,
+      category: "Snake",
     },
   ];
 
