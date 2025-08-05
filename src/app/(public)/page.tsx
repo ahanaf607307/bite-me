@@ -1,5 +1,5 @@
-import HeroHome from "@/view/Home/HeroHome";
-import PopularProductsHome from "@/view/Home/PopularProductsHome";
+import HeroHome from "@/view/PublicComponents/Home/HeroHome";
+import PopularProductsHome from "@/view/PublicComponents/Home/PopularProductsHome";
 import DailyBestSellHome from "@/view/Shared/DailyBestSellHome";
 
 export default function Home() {

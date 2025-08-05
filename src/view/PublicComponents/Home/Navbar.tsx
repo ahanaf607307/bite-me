@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Search, Menu, ChefHat, User, CircleUser } from "lucide-react";
+import { ChefHat, Menu, Search } from "lucide-react";
 import Link from "next/link";
-import { NavbarDropdown } from "../Shared/NavbarDropdown";
+import { useState } from "react";
+import { NavbarDropdown } from "../../Shared/NavbarDropdown";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

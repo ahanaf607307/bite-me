@@ -5,9 +5,9 @@ import { ChefHat, Clock, Star } from "lucide-react";
 import Image from "next/image";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import h1 from "../../../public/images/heroImage/h1.png";
-import h2 from "../../../public/images/heroImage/h2.png";
-import h3 from "../../../public/images/heroImage/h3.png";
+import h1 from "../../../../public/images/heroImage/h1.png";
+import h2 from "../../../../public/images/heroImage/h2.png";
+import h3 from "../../../../public/images/heroImage/h3.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -47,7 +47,7 @@ const heroSlides = [
 
 export default function HeroHome() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden">
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         effect="fade"
@@ -55,13 +55,8 @@ export default function HeroHome() {
           nextEl: ".swiper-button-next-custom",
           prevEl: ".swiper-button-prev-custom",
         }}
-        pagination={{
-          clickable: true,
-          bulletClass: "swiper-pagination-bullet-custom",
-          bulletActiveClass: "swiper-pagination-bullet-active-custom",
-        }}
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         loop={true}

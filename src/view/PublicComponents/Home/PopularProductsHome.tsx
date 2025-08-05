@@ -1,11 +1,11 @@
-import ProductCard from "../Shared/ProductCard";
-import TitleShared from "../Shared/TitleShared";
-import { ProductCardType } from "../TypeExport/ProductCardType";
-import food1 from "../../../public/images/foodImage/burger.jpg";
-import food2 from "../../../public/images/foodImage/fishFry.jpg";
-import food3 from "../../../public/images/foodImage/plater.jpg";
-import food4 from "../../../public/images/foodImage/vagitableTrea.jpg";
-import food5 from "../../../public/images/foodImage/vagitableTrea2.jpg";
+import food1 from "../../../../public/images/foodImage/burger.jpg";
+import food2 from "../../../../public/images/foodImage/fishFry.jpg";
+import food3 from "../../../../public/images/foodImage/plater.jpg";
+import food4 from "../../../../public/images/foodImage/vagitableTrea.jpg";
+import food5 from "../../../../public/images/foodImage/vagitableTrea2.jpg";
+import ProductCard from "../../Shared/ProductCard";
+import TitleShared from "../../Shared/TitleShared";
+import { ProductCardType } from "../../TypeExport/ProductCardType";
 
 const PopularProductsHome = () => {
   const productData: ProductCardType[] = [
