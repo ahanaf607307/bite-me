@@ -5,9 +5,11 @@ import { ChefHat, Clock, Star } from "lucide-react";
 import Image from "next/image";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import h1 from "../../../../public/images/heroImage/h1.png";
-import h2 from "../../../../public/images/heroImage/h2.png";
-import h3 from "../../../../public/images/heroImage/h3.png";
+import h1 from "../../../../public/images/heroImage/b4.jpg";
+import h2 from "../../../../public/images/heroImage/b5.jpg";
+import h3 from "../../../../public/images/heroImage/b8.jpg";
+import h4 from "../../../../public/images/heroImage/b6.jpg";
+import h5 from "../../../../public/images/heroImage/b3.jpg";
 
 // Import Swiper styles
 import "swiper/css";
@@ -43,6 +45,24 @@ const heroSlides = [
       "Dive into our fresh seafood selection, sourced daily from local fishermen and prepared by our expert chefs.",
     badge: "Fresh Daily",
   },
+  {
+    id: 4,
+    image: h4,
+    title: "Ocean's Finest",
+    subtitle: "Seafood Selection",
+    description:
+      "Dive into our fresh seafood selection, sourced daily from local fishermen and prepared by our expert chefs.",
+    badge: "Fresh Daily",
+  },
+  {
+    id: 5,
+    image: h5,
+    title: "Ocean's Finest",
+    subtitle: "Seafood Selection",
+    description:
+      "Dive into our fresh seafood selection, sourced daily from local fishermen and prepared by our expert chefs.",
+    badge: "Fresh Daily",
+  },
 ];
 
 export default function HeroHome() {
@@ -64,7 +84,7 @@ export default function HeroHome() {
       >
         {heroSlides.map((slide) => (
           <SwiperSlide key={slide.id} className="relative">
-            <div className="absolute inset-0 bg-black/40 z-10" />
+            <div className="absolute inset-0 bg-black/50 z-10" />
             <div className="absolute inset-0">
               <Image
                 src={slide.image || "/placeholder.svg"}

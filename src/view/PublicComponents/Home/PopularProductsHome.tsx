@@ -66,13 +66,13 @@ const PopularProductsHome = () => {
     },
   ];
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto p-6">
       {/* Title  */}
       <div>
         <TitleShared title="Popular Products" className="text-start" />
       </div>
       {/* map card data  */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 pt-6 ">
         {productData.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

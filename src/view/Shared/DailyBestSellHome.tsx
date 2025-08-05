@@ -84,7 +84,7 @@ const DailyBestSellHome = () => {
   const swiperRef = useRef<SwiperType | null>(null);
   return (
     <div className="container mx-auto p-6">
-      <div className="flex justify-between items-start pb-6 md:pb-10">
+      <div className="flex justify-between items-start ">
         <TitleShared title="Daily Best Sells" className="text-start " />
         <Button
           onClick={() => swiperRef.current?.slideNext()}
@@ -96,43 +96,45 @@ const DailyBestSellHome = () => {
         </Button>
       </div>
 
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        freeMode={true}
-        modules={[FreeMode, Pagination]}
-        breakpoints={{
-          320: {
-            slidesPerView: 1.5,
-            spaceBetween: 16,
-          },
-          480: {
-            slidesPerView: 1.5,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 3.5,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 4.5,
-            spaceBetween: 24,
-          },
-          1440: {
-            slidesPerView: 4.5,
-            spaceBetween: 24,
-          },
-        }}
-      >
-        {bestSellProduct?.map((product) => (
-          <SwiperSlide className="rounded-2xl border-0 shadow-none">
-            <ProductCard key={product.id} product={product} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="pt-6 ">
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          freeMode={true}
+          modules={[FreeMode, Pagination]}
+          breakpoints={{
+            320: {
+              slidesPerView: 1.5,
+              spaceBetween: 16,
+            },
+            480: {
+              slidesPerView: 1.5,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3.5,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 4.5,
+              spaceBetween: 24,
+            },
+            1440: {
+              slidesPerView: 4.5,
+              spaceBetween: 24,
+            },
+          }}
+        >
+          {bestSellProduct?.map((product) => (
+            <SwiperSlide className="rounded-2xl border-0 shadow-none">
+              <ProductCard key={product.id} product={product} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };
