@@ -4,7 +4,7 @@ interface TitleType {
   className: string;
 }
 
-const TitleShared = ({ title, className }: TitleType) => {
+const TitleShared = ({ title }: TitleType) => {
   return (
     <div>
       <h1 className={cn("text-xl md:text-3xl ")}>{title}</h1>

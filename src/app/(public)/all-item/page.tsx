@@ -1,10 +1,12 @@
 "use client";
 
 import { Search } from "lucide-react";
-import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
+import { selectFilteredItems } from "@/redux/Features/foodFilter/selectors";
+import { useAppSelector } from "@/redux/hooks";
+import SidebarFilter from "@/view/PublicComponents/AllItemComponents/SidebarFilter";
 import ProductCard from "@/view/Shared/ProductCard";
 import item1 from "../../../../public/images/allItem/bbq-bacon-burger.png";
 import item2 from "../../../../public/images/allItem/buffalo-chicken-wings.png";
@@ -20,15 +22,8 @@ import item9 from "../../../../public/images/allItem/mint-chocolate-chip-ice-cre
 import item12 from "../../../../public/images/allItem/oreo-milkshake.png";
 import item10 from "../../../../public/images/allItem/strawberry-cheesecake.png";
 import item11 from "../../../../public/images/allItem/vanilla-ice-cream.png";
-import SidebarFilter from "@/view/PublicComponents/AllItemComponents/SidebarFilter";
-import { useAppSelector } from "@/redux/hooks";
-import { selectFilteredItems } from "@/redux/Features/foodFilter/selectors";
 
 export default function Component() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState([0, 50]);
-
   const foodItems = [
     {
       id: 1,
@@ -212,14 +207,7 @@ export default function Component() {
                   <h3 className="text-lg font-semibold mb-2">No items found</h3>
                   <p>Try adjusting your search or filter criteria</p>
                 </div>
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setSearchTerm("");
-                    setSelectedCategories([]);
-                    setPriceRange([0, 50]);
-                  }}
-                >
+                <Button variant="outline" onClick={() => {}}>
                   Clear all filters
                 </Button>
               </div>

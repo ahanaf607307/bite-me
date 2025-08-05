@@ -134,8 +134,11 @@ const DailyBestSellHome = () => {
           }}
         >
           {bestSellProduct?.map((product) => (
-            <SwiperSlide className="rounded-2xl border-0 shadow-none">
-              <ProductCard key={product.id} product={product} />
+            <SwiperSlide
+              key={product?.id}
+              className="rounded-2xl border-0 shadow-none"
+            >
+              <ProductCard product={product} />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -1,10 +1,9 @@
 import { ThemeProvider } from "@/view/DashboardComponents/ThemeProvider/theme-provider";
+import { Footer } from "@/view/PublicComponents/Home/Footer";
 import Navbar from "@/view/PublicComponents/Home/Navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import { Footer } from "@/view/PublicComponents/Home/Footer";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

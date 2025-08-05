@@ -49,7 +49,7 @@ export default function SidebarFilter() {
             </h2>
             <p className="text-muted-foreground">
               Discover delicious meals from our extensive menu. Use the filters
-              to find exactly what you're craving.
+              to find exactly what you{`&apos;`}re craving.
             </p>
           </div>
 

@@ -16,7 +16,6 @@ export function SmallProductCard({
   image,
   title,
   rating,
-  reviewCount,
   currentPrice,
   originalPrice,
 }: ProductCardProps) {

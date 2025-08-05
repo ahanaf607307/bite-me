@@ -11,7 +11,7 @@ export default function DashboardLayout({
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <body>
           {/* Main content */}
-          <DashboardLayoutSetup children={children} />
+          <DashboardLayoutSetup>{children}</DashboardLayoutSetup>
         </body>
       </ThemeProvider>
     </html>
