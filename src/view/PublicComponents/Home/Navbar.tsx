@@ -17,10 +17,14 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "All Item", href: "/all-item" },
+    { name: "About us", href: "/about-us" },
+    { name: "Contact us", href: "/contact-us" },
   ];
   const navItemsMobile = [
     { name: "Home", href: "/" },
     { name: "All Item", href: "/all-item" },
+    { name: "About us", href: "/about-us" },
+    { name: "Contact us", href: "/contact-us" },
     { name: "Dashboard", href: "/dashboard" },
   ];
 

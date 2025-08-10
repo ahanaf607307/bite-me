@@ -34,7 +34,7 @@ export function SmallProductCard({
           </div>
           <div className="flex-1 min-w-0">
             <Link href="/">
-              <h3 className="text-sm h-12 hover:text-blue-600 transition  transform duration-150 font-medium text-gray-900 line-clamp-2 mb-1">
+              <h3 className="text-sm h-12 dark:text-white dark:hover:text-blue-300 hover:text-blue-600 transition  transform duration-150 font-medium text-gray-900 line-clamp-2 mb-1">
                 {title.slice(0, 50)}
                 {title.length > 50 && "....."}
               </h3>
