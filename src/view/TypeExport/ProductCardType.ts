@@ -1,15 +1,15 @@
 import { StaticImageData } from "next/image";
 
 // types/Product.ts
-export interface ProductCardType {
-  id: number;
-  name: string;
-  description: string;
-  category: string;
-  brand: string;
-  rating: number;
-  price: number;
-  oldPrice?: number;
-  image: StaticImageData;
+export interface FoodCardType {
+  _id: number;
+  foodName: string;
+  foodDesc: string;
+  foodCategory: string;
+  foodBrand: string;
+  foodRating: number;
+  foodPrice: number;
+  discountPrice?: number;
+  foodImage: StaticImageData;
   isHot?: boolean;
 }

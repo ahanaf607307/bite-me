@@ -8,12 +8,12 @@ export default function DashboardLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <body>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {/* Main content */}
           <DashboardLayoutSetup>{children}</DashboardLayoutSetup>
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
