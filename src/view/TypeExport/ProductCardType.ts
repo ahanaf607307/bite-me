@@ -10,6 +10,7 @@ export interface FoodCardType {
   foodRating: number;
   foodPrice: number;
   discountPrice?: number;
-  foodImage: StaticImageData;
+  foodImage: string;
+  foodStatus: string;
   isHot?: boolean;
 }

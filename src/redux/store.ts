@@ -1,11 +1,12 @@
-// app/store.ts
 import { configureStore } from "@reduxjs/toolkit";
-import foodFiltersReducer from "../redux/Features/foodFilter/foodFilterSlice";
+import { baseApi } from "./api/baseApi";
 
 export const store = configureStore({
   reducer: {
-    foodFilters: foodFiltersReducer,
+    [baseApi.reducerPath]: baseApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(baseApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

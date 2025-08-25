@@ -17,38 +17,7 @@ const DashboardHeader = () => {
               Home
             </Button>
           </Link>
-          <Link href="/" className="font-semibold">
-            <Button
-              variant={"outline"}
-              className="border-2 bg-transparent text-white border-white hover:bg-white hover:text-black transition cursor-pointer "
-            >
-              Home
-            </Button>
-          </Link>
-          <Link href="/" className="font-semibold">
-            <Button
-              variant={"outline"}
-              className="border-2 bg-transparent text-white border-white hover:bg-white hover:text-black transition cursor-pointer "
-            >
-              Home
-            </Button>
-          </Link>
-          <Link href="/" className="font-semibold">
-            <Button
-              variant={"outline"}
-              className="border-2 bg-transparent text-white border-white hover:bg-white hover:text-black transition cursor-pointer "
-            >
-              Home
-            </Button>
-          </Link>
-          <Link href="/" className="font-semibold">
-            <Button
-              variant={"outline"}
-              className="border-2 bg-transparent text-white border-white hover:bg-white hover:text-black transition cursor-pointer "
-            >
-              Home
-            </Button>
-          </Link>
+
           <ToggleButton />
         </div>
 

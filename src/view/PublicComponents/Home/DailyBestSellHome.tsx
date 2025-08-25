@@ -2,11 +2,6 @@
 import ProductCard from "@/view/Shared/ProductCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import food1 from "../../../../public/images/foodImage/burger.jpg";
-import food2 from "../../../../public/images/foodImage/fishFry.jpg";
-import food3 from "../../../../public/images/foodImage/plater.jpg";
-import food4 from "../../../../public/images/foodImage/vagitableTrea.jpg";
-import food5 from "../../../../public/images/foodImage/vagitableTrea2.jpg";
 
 // Import Swiper styles
 import "swiper/css";
@@ -15,76 +10,32 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Button } from "@/components/ui/button";
-import { MoveRight } from "lucide-react";
+import { useGetFoodQuery } from "@/redux/api/baseApi";
+import TitleShared from "@/view/Shared/TitleShared";
+import { FoodCardType } from "@/view/TypeExport/ProductCardType";
+import { Loader, MoveRight } from "lucide-react";
 import { useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { FreeMode, Pagination } from "swiper/modules";
-import { ProductCardType } from "@/view/TypeExport/ProductCardType";
-import TitleShared from "@/view/Shared/TitleShared";
 
 const DailyBestSellHome = () => {
-  const bestSellProduct: ProductCardType[] = [
-    {
-      id: 1,
-      name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-      description: "Instant Herbal Beverage with Dandelion",
-      brand: "NestFood",
-      rating: 4.0,
-      price: 28.85,
-      oldPrice: 32.8,
-      image: food1,
-      isHot: true,
-      category: "Snake",
-    },
-    {
-      id: 2,
-      name: "Nature's Path Organic Oats & Honey",
-      description: "Crunchy granola snack for breakfast",
-      brand: "GreenBites",
-      rating: 4.5,
-      price: 19.99,
-      oldPrice: 22.49,
-      image: food2,
-      isHot: false,
-      category: "Snake",
-    },
-    {
-      id: 3,
-      name: "Organic Fruit & Nut Trail Mix",
-      description: "A mix of dried fruits and roasted nuts",
-      brand: "HealthyChoice",
-      rating: 3.8,
-      price: 14.99,
-      oldPrice: 17.5,
-      image: food3,
-      isHot: true,
-      category: "Snake",
-    },
-    {
-      id: 4,
-      name: "Gluten-Free Coconut Cookies",
-      description: "Light, crispy and sweet coconut cookies",
-      brand: "CrispyCo",
-      rating: 4.2,
-      price: 9.99,
-      oldPrice: 12.0,
-      image: food4,
-      isHot: false,
-      category: "Snake",
-    },
-    {
-      id: 5,
-      name: "Vegan Dark Chocolate Almond Bar",
-      description: "Rich vegan chocolate with almond crunch",
-      brand: "ChocoLuxe",
-      rating: 4.9,
-      price: 6.75,
-      oldPrice: 8.25,
-      image: food5,
-      isHot: true,
-      category: "Snake",
-    },
-  ];
+  const { isError, data, isLoading } = useGetFoodQuery(undefined, {
+    pollingInterval: 5000000,
+  });
+
+  if (isLoading) {
+    <div className="flex justify-center items-center py-20">
+      <Loader size={50} className="animate-spin " />
+    </div>;
+  }
+
+  const foodData = data?.data;
+
+  console.log("--------------> redux ", foodData);
+  const filterDailyBestSell = foodData?.filter(
+    (item: FoodCardType) => item.foodStatus === "dailySell"
+  );
+  console.log("best sell", filterDailyBestSell);
 
   const swiperRef = useRef<SwiperType | null>(null);
   return (
@@ -133,9 +84,9 @@ const DailyBestSellHome = () => {
             },
           }}
         >
-          {bestSellProduct?.map((product) => (
+          {filterDailyBestSell?.map((product: FoodCardType) => (
             <SwiperSlide
-              key={product?.id}
+              key={product?._id}
               className="rounded-2xl border-0 shadow-none"
             >
               <ProductCard product={product} />

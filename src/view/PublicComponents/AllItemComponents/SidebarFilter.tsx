@@ -12,32 +12,12 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Slider } from "@/components/ui/slider";
-import {
-  setPriceRange,
-  setSearchTerm,
-  toggleCategory,
-} from "@/redux/Features/foodFilter/foodFilterSlice";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { RootState } from "@/redux/store";
 import { Filter, Search } from "lucide-react";
 
 // Example categories - replace with real data or import
 const categories = ["Pizza", "Burger", "Salad", "Pasta", "Dessert"];
 
 export default function SidebarFilter() {
-  const dispatch = useAppDispatch();
-  const { searchTerm, selectedCategories, priceRange } = useAppSelector(
-    (state: RootState) => state.foodFilters
-  );
-
-  const handleCategoryChange = (category: string, checked: boolean) => {
-    dispatch(toggleCategory({ category, checked }));
-  };
-
-  const handlePriceChange = (range: number[]) => {
-    dispatch(setPriceRange([range[0], range[1]]));
-  };
-
   return (
     <div className="space-y-6">
       <div className="lg:col-span-1">
@@ -80,10 +60,6 @@ export default function SidebarFilter() {
                       <Input
                         id="search"
                         placeholder="Search for food..."
-                        value={searchTerm}
-                        onChange={(e) =>
-                          dispatch(setSearchTerm(e.target.value))
-                        }
                         className="pl-10"
                       />
                     </div>
@@ -100,13 +76,7 @@ export default function SidebarFilter() {
                           key={category}
                           className="flex items-center space-x-2"
                         >
-                          <Checkbox
-                            id={category}
-                            checked={selectedCategories.includes(category)}
-                            onCheckedChange={(checked) =>
-                              handleCategoryChange(category, checked as boolean)
-                            }
-                          />
+                          <Checkbox id={category} />
                           <Label
                             htmlFor={category}
                             className="text-sm font-normal cursor-pointer"
@@ -121,16 +91,9 @@ export default function SidebarFilter() {
                   {/* Price Range */}
                   <div>
                     <Label className="text-base font-semibold mb-3 block">
-                      Price Range: ${priceRange[0]} - ${priceRange[1]}
+                      Price Range:
                     </Label>
-                    <Slider
-                      value={priceRange}
-                      onValueChange={handlePriceChange}
-                      max={50}
-                      min={0}
-                      step={1}
-                      className="w-full"
-                    />
+                    <Slider max={50} min={0} step={1} className="w-full" />
                     <div className="flex justify-between text-xs text-muted-foreground mt-1">
                       <span>$0</span>
                       <span>$50</span>
@@ -156,8 +119,6 @@ export default function SidebarFilter() {
                 <Input
                   id="search"
                   placeholder="Search for food..."
-                  value={searchTerm}
-                  onChange={(e) => dispatch(setSearchTerm(e.target.value))}
                   className="pl-10"
                 />
               </div>
@@ -171,13 +132,7 @@ export default function SidebarFilter() {
               <div className="space-y-3">
                 {categories.map((category) => (
                   <div key={category} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={category}
-                      checked={selectedCategories.includes(category)}
-                      onCheckedChange={(checked) =>
-                        handleCategoryChange(category, checked as boolean)
-                      }
-                    />
+                    <Checkbox id={category} />
                     <Label
                       htmlFor={category}
                       className="text-sm font-normal cursor-pointer"
@@ -192,16 +147,9 @@ export default function SidebarFilter() {
             {/* Price Range */}
             <div>
               <Label className="text-base font-semibold mb-3 block">
-                Price Range: ${priceRange[0]} - ${priceRange[1]}
+                Price Range:
               </Label>
-              <Slider
-                value={priceRange}
-                onValueChange={handlePriceChange}
-                max={50}
-                min={0}
-                step={1}
-                className="w-full"
-              />
+              <Slider max={50} min={0} step={1} className="w-full" />
               <div className="flex justify-between text-xs text-muted-foreground mt-1">
                 <span>$0</span>
                 <span>$50</span>

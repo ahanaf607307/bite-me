@@ -1,6 +1,6 @@
 "use client";
 
-import { SquareTerminal } from "lucide-react";
+import { Plus, SquareTerminal } from "lucide-react";
 import * as React from "react";
 
 import { NavMain } from "@/components/nav-main";
@@ -25,6 +25,13 @@ const data = {
       title: "Profile",
       url: "/profile",
       icon: SquareTerminal,
+      isActive: false,
+      items: [],
+    },
+    {
+      title: "Add Item",
+      url: "/add-item",
+      icon: Plus,
       isActive: false,
       items: [],
     },

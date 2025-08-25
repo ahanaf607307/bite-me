@@ -1,30 +1,22 @@
 "use client";
 
-import { Search } from "lucide-react";
+import { Loader, Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import FoodServices from "@/modules/allItem/food.service";
+import { useGetFoodQuery } from "@/redux/api/baseApi";
 import SidebarFilter from "@/view/PublicComponents/AllItemComponents/SidebarFilter";
 import ProductCard from "@/view/Shared/ProductCard";
 import { FoodCardType } from "@/view/TypeExport/ProductCardType";
-import { useEffect, useState } from "react";
 
 export default function Component() {
-  const [food, setFood] = useState<FoodCardType[]>([]);
-  useEffect(() => {
-    const fetchFood = async () => {
-      try {
-        const res = await FoodServices.getAll();
-        setFood(res.data);
-      } catch (error) {
-        console.log("Error from fetch food", error);
-      }
-    };
+  const { isError, data, isLoading } = useGetFoodQuery(undefined, {
+    pollingInterval: 5000000,
+  });
 
-    fetchFood();
-  }, []);
+  const foodData = data?.data;
 
+  console.log("--------------> redux ", foodData);
   return (
     <div className="min-h-screen bg-background ">
       <div className="container mx-auto px-4 py-8">
@@ -38,20 +30,26 @@ export default function Component() {
           <div className="lg:col-span-3">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-xl font-semibold">
-                {food?.length} items found
+                {foodData?.length} items found
               </h3>
               <div className="text-sm text-muted-foreground">
                 Showing results for your selection
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
-              {food?.map((item) => (
-                <ProductCard key={item._id} product={item} />
-              ))}
-            </div>
+            {isLoading ? (
+              <div className="flex justify-center items-center py-20">
+                <Loader size={50} className="animate-spin " />
+              </div>
+            ) : (
+              <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {foodData?.map((item: FoodCardType) => (
+                  <ProductCard key={item._id} product={item} />
+                ))}
+              </div>
+            )}
 
-            {food?.length === 0 && (
+            {foodData?.length === 0 && (
               <div className="text-center py-12">
                 <div className="text-muted-foreground mb-4">
                   <Search className="w-12 h-12 mx-auto mb-4 opacity-50" />

@@ -10,7 +10,7 @@ export default function Home() {
       <section>
         <HeroHome />
       </section>
-      <section className=" flex flex-col gap-y-6 md:gap-y-10 pt-6">
+      <section className=" flex flex-col gap-y-6 md:gap-y-10 pt-20">
         <PopularProductsHome />
         <DailyBestSellHome />
         <AllProductsHom />

@@ -1,41 +1,31 @@
-import { SmallProductCard } from "@/view/Shared/AllProductCard";
-import f1 from "../../../../public/images/foodImage/f5.png";
-import f2 from "../../../../public/images/foodImage/f6.png";
-import f3 from "../../../../public/images/foodImage/f7.png";
-import TitleShared from "@/view/Shared/TitleShared";
+"use client";
 import { Separator } from "@/components/ui/separator";
+import { useGetFoodQuery } from "@/redux/api/baseApi";
+import { SmallProductCard } from "@/view/Shared/SmallProductCard";
 
-const recentlyAddedProducts = [
-  {
-    id: 1,
-    image: f1,
-    title: "Pepperidge Farm Farmhouse Hearty White Bread",
-    rating: 4.0,
-    reviewCount: 76,
-    currentPrice: 32.85,
-    originalPrice: 35.8,
-  },
-  {
-    id: 2,
-    image: f2,
-    title: "Organic Frozen Triple Berry Blend",
-    rating: 4.0,
-    reviewCount: 134,
-    currentPrice: 32.85,
-    originalPrice: 35.8,
-  },
-  {
-    id: 3,
-    image: f3,
-    title: "Oroweat Country Buttermilk Bread",
-    rating: 4.0,
-    reviewCount: 89,
-    currentPrice: 32.85,
-    originalPrice: 35.8,
-  },
-];
+import TitleShared from "@/view/Shared/TitleShared";
+import { FoodCardType } from "@/view/TypeExport/ProductCardType";
+import { Loader } from "lucide-react";
 
 export function RecentlyAdded() {
+  const { isError, data, isLoading } = useGetFoodQuery(undefined, {
+    pollingInterval: 5000000,
+  });
+
+  if (isLoading) {
+    <div className="flex justify-center items-center py-20">
+      <Loader size={50} className="animate-spin " />
+    </div>;
+  }
+
+  const foodData = data?.data;
+
+  console.log("--------------> redux ", foodData);
+
+  const filterRecentlyAdded = data?.data.filter(
+    (item: FoodCardType) => item.foodRating <= 2
+  );
+  console.log("Filter top selling ", filterRecentlyAdded);
   return (
     <div className="space-y-6">
       <TitleShared
@@ -44,16 +34,8 @@ export function RecentlyAdded() {
       />
       <Separator className="-mt-2" />
       <div className="space-y-4">
-        {recentlyAddedProducts.map((product) => (
-          <SmallProductCard
-            key={product.id}
-            image={product.image}
-            title={product.title}
-            rating={product.rating}
-            reviewCount={product.reviewCount}
-            currentPrice={product.currentPrice}
-            originalPrice={product.originalPrice}
-          />
+        {filterRecentlyAdded?.slice(0, 3).map((item: FoodCardType) => (
+          <SmallProductCard key={item?._id} product={item} />
         ))}
       </div>
     </div>

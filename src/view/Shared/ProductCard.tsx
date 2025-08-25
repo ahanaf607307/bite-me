@@ -21,11 +21,10 @@ const ProductCard = ({ product }: Props) => {
 
       <div className="flex justify-center overflow-hidden  relative h-44">
         <Image
-          src={product?.foodImage}
-          width={300}
-          height={300}
-          alt={product?.foodName}
-          className="object-cover  group-hover:scale-110 transition-transform duration-300"
+          src={product.foodImage.trim()}
+          alt={product.foodName}
+          layout="fill"
+          className="object-cover h-full w-full group-hover:scale-110 transition-transform duration-300"
         />
       </div>
 
